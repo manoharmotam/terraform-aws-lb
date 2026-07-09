@@ -16,7 +16,7 @@ resource "aws_lb" "main" {
 }
 
 resource "aws_lb_listener" "main" {
-  load_balancer_arn = local.lb_arn
+  load_balancer_arn = aws_lb.main.arn
   port              = var.port
   protocol          = var.protocol
 
